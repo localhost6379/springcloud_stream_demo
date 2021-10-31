@@ -1,0 +1,12 @@
+server:
+  port: 6688
+eureka:
+  client:
+    # 是否将当前模块注册到 eureka服务器 上成为eureka客户端. 当然不用!这个模块本身就作为eureka服务器.
+    # eureka服务器就是注册中心, 下面的配置是问你是不是将当前模块注册到注册中心中.
+    register-with-eureka: false
+    # 是否从 eureka 中获取注册信息. eureka服务器不需要获取注册信息.
+    fetch-registry: false
+    service-url:
+      # eureka服务器的地址, 将来eureka客户端就往这个地址上注册. 下面url中的eureka必须写.
+      defaultZone: http://127.0.0.1:${server.port}/eureka/
